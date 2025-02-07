@@ -1,6 +1,6 @@
 <template>
     <div class="bg-brown mt-2 text-white p-4 d-flex align-items-center justify-content-between">
-        <div class="pe-5">
+        <div class="pe-5 pt-1 pt-md-0">
             <transition name="slide" mode="out-in">
                 <blockquote class="quote mb-0" :key="currentIndex">
                     <p>“{{ quotes[currentIndex].text }}”</p>
