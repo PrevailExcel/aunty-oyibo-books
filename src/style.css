@@ -147,7 +147,9 @@ body {
 .slider {
   display: flex;
   gap: 10px;
-  /* Add space between items */
+  -ms-overflow-style: none;  /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+
 }
 
 /* Each item inside the slider */

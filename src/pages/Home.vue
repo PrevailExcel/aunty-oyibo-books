@@ -84,7 +84,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
         <div class="row">
             <template v-for="a in [1, 1, 1, 1,]">
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/legachi.webp" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Call Me Legachi</div>
@@ -98,7 +98,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/zain.jpeg" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Zainab Takes New York</div>
@@ -112,7 +112,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/series-4.png" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Gemini</div>
@@ -126,7 +126,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/rants.jpg" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Rants of a Nigerian Teen</div>
@@ -140,7 +140,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/series.png" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Storm Warning</div>
@@ -154,7 +154,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/series-1.png" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Sands Of Rebellion</div>
@@ -168,7 +168,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                     </div>
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
-                    <div class="book-card">
+                    <div class="">
                         <img src="/images/series-2.png" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Storm Warning</div>
