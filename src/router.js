@@ -34,9 +34,6 @@ const routes = [
             requiresAuth: false,
             home: true
         },
-        // beforeEnter: (to, from) => {
-        //   document.querySelector('meta[name="theme-color"]').setAttribute('content', "#FFFFFF");
-        // },
     }, 
     {
         path: "/setpin",
@@ -96,9 +93,6 @@ const routes = [
             requiresAuth: true,
             home: true
         }, 
-        beforeEnter: (to, from) => {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', "#07163F");
-        },
     },
     {
         path: "/profile",
@@ -109,9 +103,6 @@ const routes = [
             requiresAuth: true,
             home: true
         }, 
-        beforeEnter: (to, from) => {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', "#07163F");
-        },
     },
     {
         path: "/buydata",
@@ -190,7 +181,6 @@ const routes = [
       name: "login",
       component: Login,    
       beforeEnter: (to, from) => {
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', "#07163F");
           if (!Auth.check()) {
               return true;
           } else {
@@ -273,7 +263,6 @@ const router = createRouter({
     routes,
 });
 router.beforeEach((to, from, next) => {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', "#FFFFFF");
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (Auth.check()) {
             next();

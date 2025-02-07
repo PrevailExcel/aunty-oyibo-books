@@ -11,7 +11,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
 
     <div class="container py-4">
         <!-- Logo -->
-        <div class="d-flex align-items-center my-4">
+        <div class="d-flex align-items-center mb-4 mt-2">
             <img src="/images/book.png" alt="Logo" width="24" height="24">
             <h1 class="ms-2 web-name">Aunty Oyibo Stories</h1>
         </div>

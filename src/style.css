@@ -82,7 +82,7 @@ body {
 }
 
 .quote {
-  max-width: 297px;
+  max-width: 450px;
   font-family: Lato;
   font-size: 12px;
   font-weight: 600;
@@ -141,15 +141,22 @@ body {
   overflow-x: auto;
   /* Allow horizontal scrolling */
   margin: 0 auto;
+  -ms-overflow-style: none !important;  /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none !important;  /* Hide scrollbar for Firefox */
 }
 
 /* The slider itself - arrange items horizontally */
 .slider {
   display: flex;
   gap: 10px;
-  -ms-overflow-style: none;  /* Hide scrollbar for IE & Edge */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none !important;  /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none !important;  /* Hide scrollbar for Firefox */
 
+}
+
+.slider-container::-webkit-scrollbar
+.slider::-webkit-scrollbar {
+  display: none !important; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 /* Each item inside the slider */
