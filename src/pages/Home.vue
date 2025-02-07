@@ -133,6 +133,20 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
                 </div> 
                 <div class="col-md-3 col-4 mb-4">
                     <div class="book-card">
+                        <img src="/images/rants.jpg" class="card-img-top rounded-3" alt="Storm Warning">
+                        <div class="card-body">
+                            <div class="book-title mt-2">Rants of a Nigerian Teen</div>
+                            <div class="book-author mt-1">By Rejoice K.</div>
+                        </div>
+
+                        <div class="progress full-bar mt-2">
+                            <div class="progress-bar progress-bar-animated bg-deep-brown" role="progressbar"
+                                style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-3 col-4 mb-4">
+                    <div class="book-card">
                         <img src="/images/series.png" class="card-img-top rounded-3" alt="Storm Warning">
                         <div class="card-body">
                             <div class="book-title mt-2">Storm Warning</div>
