@@ -7,42 +7,31 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
-      // strategies: 'networkFirst',
-      // notificationOptions: {
-      //   body: 'A new version of the app is available. Click OK to update.',
-      // },
-      // devOptions: {
-      //   enabled: false
-      // },
+      strategies: 'networkFirst',
+      notificationOptions: {
+        body: 'A new version of the app is available. Click OK to update.',
+      },
+      devOptions: {
+        enabled: false
+      },
       mode: 'production',
       base: '/',
       includeAssets: [
         'app_icon.jpg',
-        'app_icon.png',
-        'app_icon-2.jpg',
-        'app_icon-2.png',
-        'badge.svg',
-        'logo.png',
-        'logo-dark.png',
-        'done.png',
-        'loader.gif',
-        'mtn.png',
-        'glo.png',
-        'etisalat.png',
-        'airtel.png',
+        'images/*',
         'icons/*'
       ],
       manifest: {
-        name: 'DIGIXCEL',
-        "theme_color": "#07163F",
-        "background_color": "#07163F",
+        name: 'Aunty Oyibo Books',
+        "theme_color": "#ffffff",
+        "background_color": "#ffffff",
         "display": "standalone",
         "orientation":"portrait",
         "scope": "/",
         "start_url": "/",
-        "app_name": "DIGIXCEL",
-        "short_name": "DIGIXCEL",
-        "description": "Everything Data, Airtime and Subscriptions",
+        "app_name": "Aunty Oyibo Books",
+        "short_name": "Aunty Oyibo Books",
+        "description": "Read captivating stories with ease. Online, Offline, and More.",
         icons: [
           {
             src: '/app_icon-2.png',
@@ -55,26 +44,6 @@ export default defineConfig({
             type: 'image/png',
           },
         ],
-        "shortcuts": [
-          {
-            "name": "Buy Data",
-            "url": "/buydata",
-            "description": "Buy Data at cheap prices",
-            "icons": [{ "src": "/airtime.png", "sizes": "96x96" }]
-          },
-          {
-            "name": "Buy Airtime",
-            "url": "/buyairtime",
-            "description": "Buy Airtime at cheap prices",
-            "icons": [{ "src": "/airtime.png", "sizes": "96x96" }]
-          },
-          {
-            "name": "Pay Bills",
-            "url": "/buycable",
-            "description": "The easiest way to pay bills",
-            "icons": [{ "src": "/ds.jpeg", "sizes": "96x96" }]
-          }
-        ],
         "categories": ["utilities", "productivity"],
         "screenshots": [
           {
@@ -82,42 +51,21 @@ export default defineConfig({
             "sizes": "576x1280",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "The most user friendly VTU app"
-          },
-          {
-            "src": "/screenshots/1.jpg",
-            "sizes": "576x1280",
-            "type": "image/jpeg",
-            "form_factor": "wide",
-            "label": "The most user friendly VTU app"
+            "label": "Read the best books from the best authors"
           },
           {
             "src": "/screenshots/2.jpg",
             "sizes": "576x1280",
             "type": "image/jpeg",
-            "form_factor": "narrow",
-            "label": "Buy cheap airtime at the snap of a finger"
+            "form_factor": "wide",
+            "label": "All for free. We do what we do for your comfort."
           },
           {
             "src": "/screenshots/3.jpg",
             "sizes": "576x1280",
             "type": "image/jpeg",
             "form_factor": "narrow",
-            "label": "Buy cheap data at the snap of a finger"
-          },
-          {
-            "src": "/screenshots/4.jpg",
-            "sizes": "576x1280",
-            "type": "image/jpeg",
-            "form_factor": "narrow",
-            "label": "Subscribe to any service of your choice"
-          },
-          {
-            "src": "/screenshots/5.jpg",
-            "sizes": "576x1280",
-            "type": "image/jpeg",
-            "form_factor": "narrow",
-            "label": "It is all in your power"
+            "label": "Beautiful stories at the snap of a finger"
           }
         ]
       },
