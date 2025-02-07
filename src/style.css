@@ -35,6 +35,7 @@ body {
   color: #333333 !important;
   /* background: linear-gradient(269.75deg, #19D0FC -550.59%, var(--blue) 107.92%) !important; */
 }
+
 .web-name {
   color: #270B09;
   font-family: Lato;
@@ -107,6 +108,12 @@ body {
   font-weight: 600;
   line-height: 14.4px;
   color: #333333;
+
+  white-space: nowrap;  /* Prevents text from wrapping */
+  overflow: hidden;     /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds "..." when text is cut off */
+  display: block;       /* Ensures it behaves correctly */
+  width: 100%;          /* Ensures it takes the full width */
 }
 
 .book-author {
@@ -123,7 +130,7 @@ body {
   color: #3333331A !important;
 }
 
-.bg-deep-brown{
+.bg-deep-brown {
   background: #270B09 !important;
 }
 
@@ -131,31 +138,44 @@ body {
 .slider-container {
   position: relative;
   /* width: 75%; Adjust this to control how much of the 4th item is visible */
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-x: auto;
+  /* Allow horizontal scrolling */
   margin: 0 auto;
 }
 
 /* The slider itself - arrange items horizontally */
 .slider {
   display: flex;
-  gap: 10px; /* Add space between items */
+  gap: 10px;
+  /* Add space between items */
 }
 
 /* Each item inside the slider */
 .slider-item {
-  flex: 0 0 30%; /* 30% width for each item to show 3 full items and part of the 4th */
+  flex: 0 0 30%;
+  /* 30% width for each item to show 3 full items and part of the 4th */
   box-sizing: border-box;
 }
 
 /* Optional: Customize scrollbars for better aesthetics */
 .slider-container::-webkit-scrollbar {
-  height: 8px; /* Make the scrollbar smaller */
+  height: 8px;
+  /* Make the scrollbar smaller */
 }
 
 .slider-container::-webkit-scrollbar-thumb {
-  background-color: #888; /* Customize the color */
+  background-color: #888;
+  /* Customize the color */
 }
 
 .slider-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Customize the color when hovered */
+  background-color: #555;
+  /* Customize the color when hovered */
+}
+
+.card-img-top {
+  aspect-ratio: 3 / 4;
+  max-height: 350px !important;
+  width: 100%;
+  object-fit: cover;
 }
