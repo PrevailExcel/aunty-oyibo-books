@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 
 const showSplash = ref(true);
 let online = ref(true);
