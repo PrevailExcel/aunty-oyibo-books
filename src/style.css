@@ -109,11 +109,16 @@ body {
   line-height: 14.4px;
   color: #333333;
 
-  white-space: nowrap;  /* Prevents text from wrapping */
-  overflow: hidden;     /* Hides overflowed text */
-  text-overflow: ellipsis; /* Adds "..." when text is cut off */
-  display: block;       /* Ensures it behaves correctly */
-  width: 100%;          /* Ensures it takes the full width */
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  /* Adds "..." when text is cut off */
+  display: block;
+  /* Ensures it behaves correctly */
+  width: 100%;
+  /* Ensures it takes the full width */
 }
 
 .book-author {
@@ -123,11 +128,12 @@ body {
   line-height: 9.6px;
   color: #333333CC;
 
-  white-space: nowrap;  /* Prevents text from wrapping */
-  overflow: hidden;     /* Hides overflowed text */
-  text-overflow: ellipsis; /* Adds "..." when text is cut off */
-  display: block;       /* Ensures it behaves correctly */
-  width: 100%;          /* Ensures it takes the full width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  display: block;  
+  width: 100%;
+  
 }
 
 .full-bar {
@@ -147,22 +153,26 @@ body {
   overflow-x: auto;
   /* Allow horizontal scrolling */
   margin: 0 auto;
-  -ms-overflow-style: none !important;  /* Hide scrollbar for IE & Edge */
-  scrollbar-width: none !important;  /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none !important;
+  /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none !important;
+  /* Hide scrollbar for Firefox */
 }
 
 /* The slider itself - arrange items horizontally */
 .slider {
   display: flex;
   gap: 10px;
-  -ms-overflow-style: none !important;  /* Hide scrollbar for IE & Edge */
-  scrollbar-width: none !important;  /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none !important;
+  /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none !important;
+  /* Hide scrollbar for Firefox */
 
 }
 
-.slider-container::-webkit-scrollbar
-.slider::-webkit-scrollbar {
-  display: none !important; /* Hide scrollbar for Chrome, Safari, and Opera */
+.slider-container::-webkit-scrollbar .slider::-webkit-scrollbar {
+  display: none !important;
+  /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 /* Each item inside the slider */
