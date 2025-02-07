@@ -122,6 +122,12 @@ body {
   font-weight: 500;
   line-height: 9.6px;
   color: #333333CC;
+
+  white-space: nowrap;  /* Prevents text from wrapping */
+  overflow: hidden;     /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds "..." when text is cut off */
+  display: block;       /* Ensures it behaves correctly */
+  width: 100%;          /* Ensures it takes the full width */
 }
 
 .full-bar {
