@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import Splash from './components/Splash.vue';
 
 const showSplash = ref(true);
 let online = ref(true);
