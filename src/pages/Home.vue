@@ -1,4 +1,6 @@
 <script setup>
+import QuotesCarousel from '../components/QuotesCarousel.vue';
+
 
 const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if necessary
 </script>
@@ -27,15 +29,7 @@ const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if neces
         </div>
 
         <!-- Quote Section -->
-        <div class="bg-brown mt-2 text-white p-4 d-flex align-items-center justify-content-between">
-            <div class="pe-5">
-                <blockquote class="quote mb-0">
-                    <p>“Books and Doors are the same thing. You open them, and you go through into another world.”</p>
-                    <footer class="blockquote-footer text-white mt-3">Jeanette Winterson</footer>
-                </blockquote>
-            </div>
-            <img src="/images/quote.png" alt="Illustration" class="text-end ms-3 img-fluid" width="100">
-        </div>
+        <QuotesCarousel />
 
         <!-- Favorite Books -->
         <h4 class="mt-4 mb-3 avail">Readers Top Choice</h4>
