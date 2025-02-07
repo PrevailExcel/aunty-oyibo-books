@@ -18,6 +18,7 @@ export default defineConfig({
       base: '/',
       includeAssets: [
         'app_icon.jpg',
+        'app_icon-2.jpg',
         'images/*',
         'icons/*'
       ],
@@ -48,6 +49,13 @@ export default defineConfig({
         "screenshots": [
           {
             "src": "/screenshots/1.jpg",
+            "sizes": "576x1280",
+            "type": "image/jpeg",
+            "form_factor": "narrow",
+            "label": "Read the best books from the best authors"
+          },
+          {
+            "src": "/screenshots/2.jpg",
             "sizes": "576x1280",
             "type": "image/jpeg",
             "form_factor": "narrow",
