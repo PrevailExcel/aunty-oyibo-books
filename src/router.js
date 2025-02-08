@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "./pages/Home.vue"
-import Intro from "./pages/Intro.vue";
 import Chapter from "./pages/Chapter.vue";
+import Intro from "./pages/Intro.vue";
 
 const routes = [
     {
@@ -17,6 +17,15 @@ const routes = [
     {
         path: "/series/:slug",
         name: "series",
+        component: Intro,
+        meta: {
+            requiresAuth: false,
+            home: false
+        },
+    },
+    {
+        path: "/series/:slug/episode",
+        name: "series-episode",
         component: Chapter,
         meta: {
             requiresAuth: false,

@@ -133,6 +133,37 @@ const bookCover = computed(() => book.value ? book.value.image : "/images/defaul
                 of transformation. Whether you are looking for an emotional
                 journey or a gripping narrative, this book promises to leave a
                 lasting impression.</p>
+
+            <p>In this captivating and thought-provoking novel, readers are
+                transported into a world where the boundaries of reality and
+                imagination blur. With richly drawn characters and a plot that
+                twists and turns, this book explores themes of love, loss, and
+                the complexity of human nature. As the story unfolds, secrets
+                are revealed, relationships are tested, and the characters are
+                forced to confront their deepest fears and desires.</p>
+
+            <p>A tale of resilience, hope, and the unexpected paths that life
+                often takes, this book will resonate with anyone who has ever
+                grappled with the challenges of self-discovery and the power
+                of transformation. Whether you are looking for an emotional
+                journey or a gripping narrative, this book promises to leave a
+                lasting impression.</p>
+
+
+            <p>In this captivating and thought-provoking novel, readers are
+                transported into a world where the boundaries of reality and
+                imagination blur. With richly drawn characters and a plot that
+                twists and turns, this book explores themes of love, loss, and
+                the complexity of human nature. As the story unfolds, secrets
+                are revealed, relationships are tested, and the characters are
+                forced to confront their deepest <b>fears and desires.</b></p>
+
+            <p>A tale of resilience, hope, and the unexpected paths that life
+                often takes, this book will resonate with anyone who has ever
+                grappled with the challenges of self-discovery and the power
+                of transformation. Whether you are looking for an emotional
+                journey or a gripping narrative, this book promises to leave a
+                lasting impression.</p>
         </div>
     </div>
 

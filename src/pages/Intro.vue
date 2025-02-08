@@ -32,7 +32,7 @@ const bookCover = computed(() => book.value ? book.value.image : "/images/defaul
             <div class="overlay"></div>
             <div class="app-bar">
                 <button class="btn text-white fs-4" @click="$router.go(-1)">
-                    <img src="/icons/back1.png" width="24">
+                    <img src="/icons/back.png" width="24">
                 </button>
             </div>
             <div>
@@ -56,7 +56,10 @@ const bookCover = computed(() => book.value ? book.value.image : "/images/defaul
                     forced to confront their deepest fears and desires.
                 </p>
             </div>
+            
+            <router-link :to="'/series/' + book.slug + '/episode'" class="book-link">
             <button class="btn btn-brown mt-2">Start Reading</button>
+            </router-link>
         </div>
     </div>
 
