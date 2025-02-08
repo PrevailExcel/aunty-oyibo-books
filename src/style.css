@@ -7,13 +7,36 @@
   --bg-40: #33333366;
   --bg-80: #333333CC;
   --bg-60: #33333399;
-
+  --deep-brown: #270B09A6;
+  --text-color: #333333;
+  --brown: #270B09;
+  --secondary-text: #333333cc;
+  --vd-brown: #270B09;
+  --card-bg: #e4e4e4cc;
   /* line-height: 1.5; */
   font-weight: 400;
 
   color-scheme: light dark;
-  background: linear-gradient(269.75deg, #19D0FC -550.59%, var(--blue) 107.92%) !important;
+  background-color: white;
+  /* background: linear-gradient(269.75deg, #19D0FC -550.59%, var(--blue) 107.92%) !important; */
   color: #333333 !important;
+
+  /* Dark Mode (Auto Detects System Preference) */
+  /* @media (prefers-color-scheme: dark) {
+    --blue: #14120f;
+    --bg-40: #ffffff33;
+    --secondary-text: #ffffff99;
+    --bg-80: #ffffffcc;
+    color: #ffffff88;
+    --deep-brown: #ffeed399;
+    --brown: #ffffff;
+    --text-color: #ffffff;
+    --vd-brown: #64554ab4;
+    --background: linear-gradient(269.75deg, #0e0e0e -550.59%, var(--blue) 107.92%);
+    --card-bg: #1e1e1e;
+    --search-bg: #444;
+    --button-bg: #ff5722;
+  } */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,16 +55,15 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  color: #333333 !important;
-  /* background: linear-gradient(269.75deg, #19D0FC -550.59%, var(--blue) 107.92%) !important; */
+  background: var(--background) !important;
+  color: var(--text-color) !important;
 }
 
 .web-name {
-  color: #270B09;
+  color: var(--brown);
   font-family: Lato;
   font-size: 16px;
   font-weight: 700;
-  line-height: 16.8px;
 }
 
 .reader {
@@ -49,7 +71,47 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  color: #333333;
+  color: var(--text-color);
+
+}
+
+.f716 {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.8px;
+  color: var(--text-color);
+
+}
+
+.f616 {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.8px;
+  color: var(--text-color);
+
+}
+
+.intro {
+  font-family: Lato !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 16.8px !important;
+  letter-spacing: 0% !important;
+}
+
+.btn-brown {
+  min-width: 315px !important;
+  height: 48px;
+  border-radius: 10px !important;
+  color: white !important;
+  font-family: Lato;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 0%;
+  background: var(--deep-brown) !important;
 
 }
 
@@ -76,7 +138,7 @@ body {
 }
 
 .bg-brown {
-  background: #270B09A6 !important;
+  background: var(--deep-brown) !important;
   height: 122px;
   border-radius: 15px;
 }
@@ -107,7 +169,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   line-height: 14.4px;
-  color: #333333;
+  color: var(--text-color);
 
   white-space: nowrap;
 
@@ -126,24 +188,25 @@ body {
   font-size: 10px;
   font-weight: 500;
   line-height: 9.6px;
-  color: #333333CC;
+  color: var(--secondary-text);
 
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;  
-  display: block;  
+  text-overflow: ellipsis;
+  display: block;
   width: 100%;
-  
+
 }
 
 .full-bar {
   height: 3px !important;
   border-radius: 5px !important;
-  color: #3333331A !important;
+  color: var(--secondary-text) !important;
+  background-color: var(--card-bg) !important;
 }
 
 .bg-deep-brown {
-  background: #270B09 !important;
+  background: var(--vd-brown) !important;
 }
 
 /* Container for the entire slider */
@@ -203,4 +266,85 @@ body {
   max-height: 350px !important;
   width: 100%;
   object-fit: cover;
+}
+
+.book-cover-background {
+  margin: 0;
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1 !important;
+  /* overflow: hidden; */
+  /* Ensures the pseudo-element does not extend beyond */
+}
+
+.book-cover-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  /* Use the same background image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  /* Apply blur only to the pseudo-element */
+  /* transform: scale(1.1); */
+  /* Prevents visible edges from blur */
+  z-index: 0;
+  /* Ensures it stays behind other elements */
+}
+
+/* Dark Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* App Bar */
+.app-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 2;
+}
+
+/* Book Cover */
+.book-cover {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  border-radius: 6px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Section */
+.book-content {
+  margin-top: 20px !important;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.container-fluid .book-cover-background {
+  margin-left: -15px;
+  /* Adjust based on container padding */
+  margin-right: -15px;
+  width: calc(100% + 30px);
+  /* Compensate for removed margins */
+}
+.book-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+.book-link:hover {
+  color: inherit; /* Prevent color change on hover */
 }

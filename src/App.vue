@@ -22,13 +22,6 @@ function init() {
 };
 init()
 
-
-// Simulate an asynchronous action like loading data or initializing the app
-setTimeout(() => {
-  showSplash.value = false;
-}, 2000); // Adjust the time as needed
-
-
 </script>
 
 <template>

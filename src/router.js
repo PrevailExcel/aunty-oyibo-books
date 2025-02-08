@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "./pages/Home.vue"
+import Intro from "./pages/Intro.vue";
 
 const routes = [
     {
@@ -10,6 +11,15 @@ const routes = [
         meta: {
             requiresAuth: false,
             home: true
+        },
+    },
+    {
+        path: "/series/:slug",
+        name: "series",
+        component: Intro,
+        meta: {
+            requiresAuth: false,
+            home: false
         },
     },
     {
