@@ -5,15 +5,15 @@ import QuotesCarousel from '../components/QuotesCarousel.vue';
 
 const items = [1, 2, 3, 4, 55, 5, 5, 5, 5]; // Replace with actual data if necessary'''
 const books = [
-    { title: "Call Me Legachi", author: "Adesuwa O. Nwokedi", image: "/images/legachi.webp", slug: "call-me-legachi", progress: 80, "favorite": true },
-    { title: "Zainab Takes New York", author: "Ayesha Harruana", image: "/images/zain.jpeg", slug: "zainab-takes-new-york", progress: 45, "favorite": true },
-    { title: "Gemini", author: "Rejoice K.", image: "/images/series-4.png", slug: "gemini", progress: 30, "favorite": false },
+    { title: "Call Me Legachi", author: "Adesuwa O. Nwokedi", image: "/images/legachi.webp", slug: "call-me-legachi", progress: 80, "favorite": false},
+    { title: "Zainab Takes New York", author: "Ayesha Harruana", image: "/images/zain.jpeg", slug: "zainab-takes-new-york", progress: 45, "favorite": false },
+    { title: "Gemini", author: "Rejoice K.", image: "/images/series-4.png", slug: "gemini", progress: 30, "favorite": true },
     { title: "Rants of a Nigerian Teen", author: "Rejoice K.", image: "/images/rants.jpg", slug: "rants-of-a-nigerian-teen", progress: 90, "favorite": false },
-    { title: "Storm Warning", author: "Rejoice K.", image: "/images/series.png", slug: "storm-warning", progress: 60, "favorite": false },
+    { title: "Storm Warning", author: "Rejoice K.", image: "/images/series.png", slug: "storm-warning", progress: 60, "favorite": true },
     { title: "Wild Flower", author: "Rejoice K.", image: "/images/series-1.png", slug: "sands-of-rebellion", progress: 20, "favorite": true },
     { title: "Sands Of Rebellion", author: "Rejoice K.", image: "/images/series-2.png", slug: "storm-warning-2", progress: 10, "favorite": true }
 ];
-const favoriteBooks = computed(() => books.value.filter(book => book.favorite));
+const favoriteBooks = computed(() => books.filter(book => book.favorite));
 </script>
 
 <template>
@@ -48,18 +48,21 @@ const favoriteBooks = computed(() => books.value.filter(book => book.favorite));
             <div class="slider">
                 <template v-for="book in favoriteBooks" :key="book.slug">
                     <div class="slider-item">
-                        <div class="book-card">
-                            <img src="/images/series-1.png" class="card-img-top rounded-3" :alt="book.title">
-                            <div class="card-body">
-                                <div class="book-title mt-2">{{ book.title }}</div>
-                                <div class="book-author mt-1">By {{ book.author }}</div>
+
+                        <router-link :to="'/series/' + book.slug" class="book-link">
+                            <div class="book-card">
+                                <img :src="book.image" class="card-img-top rounded-3" :alt="book.title">
+                                <div class="card-body">
+                                    <div class="book-title mt-2">{{ book.title }}</div>
+                                    <div class="book-author mt-1">By {{ book.author }}</div>
+                                </div>
+                                <div class="progress full-bar mt-2">
+                                    <div class="progress-bar progress-bar-animated bg-deep-brown" role="progressbar"
+                                        :style="{ width: book.progress + '%' }" :aria-valuenow="book.progress"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
-                            <div class="progress full-bar mt-2">
-                                <div class="progress-bar progress-bar-animated bg-deep-brown" role="progressbar"
-                                    :style="{ width: book.progress + '%' }" :aria-valuenow="book.progress"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
+                        </router-link>
                     </div>
                 </template>
             </div>
