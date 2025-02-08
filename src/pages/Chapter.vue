@@ -1,15 +1,14 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import QuotesCarousel from '../components/QuotesCarousel.vue';
 
-const prefersDarkMode = computed(() =>
-    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-);
+const theme = ref(localStorage.getItem("theme") || "light-mode");
 
 const getIcon = (name) => {
-    return prefersDarkMode.value ? `/icons/${name}.png` : `/icons/${name}1.png`;
+    return theme.value === "dark-mode" ? `/icons/${name}.png` : `/icons/${name}1.png`;
 };
+
+
 // Sample books data
 const books = ref([
     { title: "Call Me Legachi", author: "Adesuwa O. Nwokedi", image: "/images/legachi.webp", slug: "call-me-legachi", progress: 80, favorite: false },
@@ -27,9 +26,17 @@ const route = useRoute();
 // Find the book using the slug from the URL
 const book = computed(() => books.value.find(b => b.slug === route.params.slug));
 
-// Default book cover in case no book is found
-const bookCover = computed(() => book.value ? book.value.image : "/images/default-book-cover.png");
+const showModal = ref(false);
 
+const setTheme = (newTheme) => {
+    theme.value = newTheme;
+    localStorage.setItem("theme", newTheme);
+    document.body.classList.remove("light-mode", "dark-mode", "paper-mode");
+    document.body.classList.add(theme.value);
+
+    showModal.value = false;
+    reload
+};
 </script>
 
 <template>
@@ -41,13 +48,33 @@ const bookCover = computed(() => book.value ? book.value.image : "/images/defaul
             </button>
             <h2 class="mb-0 f716">{{ book?.title || 'Loading...' }}</h2>
             <div class="mb-0">
-                <button class="btn p-0 me-3">
+                <button class="btn p-0 me-3" @click="showModal = true">
                     <img :src="getIcon('device')" width="24" alt="Back" />
                 </button>
                 <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                     aria-controls="offcanvasExample">
                     <img :src="getIcon('menu')" width="24" alt="Back" />
                 </button>
+            </div>
+        </div>
+
+
+        <div class="modal fade show d-block" v-if="showModal" @click.self="showModal = false">
+            <div class="modal-dialog move-down custom-modal">
+                <div class="modal-content custom-modal border p-3">
+                    <h5 class="page-c mt-1">Page Color</h5>
+                    <div class="d-flex px-3 gap-3 mt-3 justify-content-center">
+                        <button class="btn border-dark bg-white ps-4 pe-5 py-3" @click="setTheme('light-mode')">
+                            <!-- <img src="/icons/light-mode.png" width="50" /> -->
+                        </button>
+                        <button class="btn border-white bg-brown-a ps-4 pe-5 py-3" @click="setTheme('dark-mode')">
+                            <!-- <img src="/icons/dark-mode.png" width="50" /> -->
+                        </button>
+                        <button class="btn border-white bg-paper ps-4 pe-5 py-3" @click="setTheme('paper-mode')">
+                            <!-- <img src="/icons/brown-paper.png" width="50" /> -->
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 

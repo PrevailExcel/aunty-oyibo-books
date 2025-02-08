@@ -1,8 +1,13 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const showSplash = ref(true);
 let online = ref(true);
+const theme = ref(localStorage.getItem("theme") || "light-mode");
+
+onMounted(() => {
+    document.body.classList.remove("light-mode", "dark-mode", "paper-mode");
+    document.body.classList.add(theme.value);
+});
 
 function init() {
   handleConnectionChange();
