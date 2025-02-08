@@ -35,14 +35,14 @@ export default defineConfig({
         "description": "Read captivating stories with ease. Online, Offline, and More.",
         icons: [
           {
-            src: '/app_icon-2.png',
+            src: '/app_icon-2.jpg',
             sizes: '192x192',
-            type: 'image/png',
+            type: 'image/jpeg',
           },
           {
-            src: '/app_icon.png',
+            src: '/app_icon.jpg',
             sizes: '512x512',
-            type: 'image/png',
+            type: 'image/jpeg',
           },
         ],
         "categories": ["utilities", "productivity"],
