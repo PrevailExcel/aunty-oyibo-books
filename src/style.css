@@ -22,7 +22,7 @@
   color: #333333 !important;
 
   /* Dark Mode (Auto Detects System Preference) */
-  /* @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     --blue: #14120f;
     --bg-40: #ffffff33;
     --secondary-text: #ffffff99;
@@ -36,7 +36,7 @@
     --card-bg: #1e1e1e;
     --search-bg: #444;
     --button-bg: #ff5722;
-  } */
+  }
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -340,11 +340,15 @@ body {
   width: calc(100% + 30px);
   /* Compensate for removed margins */
 }
+
 .book-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color */
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit text color */
 }
 
 .book-link:hover {
-  color: inherit; /* Prevent color change on hover */
+  color: inherit;
+  /* Prevent color change on hover */
 }
