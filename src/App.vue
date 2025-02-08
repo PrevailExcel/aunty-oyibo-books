@@ -13,7 +13,7 @@ onMounted(() => {
     const themeColors = {
         "light-mode": "#ffffff",  // White for light mode
         "dark-mode": "#14120f",   // Black for dark mode
-        "paper-mode": "#cd8638"   // Light brown for paper mode
+        "paper-mode": "#deb887"   // Light brown for paper mode
     };
 
     // Update <meta name="theme-color">

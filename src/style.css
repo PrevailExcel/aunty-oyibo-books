@@ -85,7 +85,7 @@
   background-color: white !important;
   background-image:
     url('/paper.jpg') !important;
-    background-size: auto !important;
+    background-size: cover !important;
   /* Rough texture */
   background-blend-mode: multiply;
   color: #000000 !important;
