@@ -18,6 +18,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "monnify-vue": "file:../monnify-vue",
+    "swiper": "^11.2.2",
     "vue": "^3.2.45",
     "vue-identity-kyc": "^1.0.0",
     "vue-router": "^4.0.13",

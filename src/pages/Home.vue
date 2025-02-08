@@ -10,8 +10,8 @@ const books = [
     { title: "Gemini", author: "Rejoice K.", image: "/images/series-4.png", slug: "gemini", progress: 30, "favorite": true },
     { title: "Rants of a Nigerian Teen", author: "Rejoice K.", image: "/images/rants.jpg", slug: "rants-of-a-nigerian-teen", progress: 90, "favorite": false },
     { title: "Storm Warning", author: "Rejoice K.", image: "/images/series.png", slug: "storm-warning", progress: 60, "favorite": true },
-    { title: "Wild Flower", author: "Rejoice K.", image: "/images/series-1.png", slug: "sands-of-rebellion", progress: 20, "favorite": true },
-    { title: "Sands Of Rebellion", author: "Rejoice K.", image: "/images/series-2.png", slug: "storm-warning-2", progress: 10, "favorite": true }
+    { title: "Wild Flower", author: "Rejoice K.", image: "/images/series-1.png", slug: "wild-flower", progress: 20, "favorite": true },
+    { title: "Sands Of Rebellion", author: "Rejoice K.", image: "/images/series-2.png", slug: "sands-of-rebellion", progress: 10, "favorite": true }
 ];
 const favoriteBooks = computed(() => books.filter(book => book.favorite));
 </script>

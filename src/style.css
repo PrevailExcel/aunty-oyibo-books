@@ -3,21 +3,22 @@
 
 
 :root {
-  --blue: #07163F;
+  --blue: white;
   --bg-40: #33333366;
   --bg-80: #333333CC;
   --bg-60: #33333399;
   --deep-brown: #270B09A6;
   --text-color: #333333;
   --brown: #270B09;
+  --menu: #333333;
   --secondary-text: #333333cc;
   --vd-brown: #270B09;
   --card-bg: #e4e4e4cc;
   /* line-height: 1.5; */
   font-weight: 400;
-
+  --background: white;
   color-scheme: light dark;
-  background-color: white;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px) !important;
   /* background: linear-gradient(269.75deg, #19D0FC -550.59%, var(--blue) 107.92%) !important; */
   color: #333333 !important;
 
@@ -26,11 +27,12 @@
     --blue: #14120f;
     --bg-40: #ffffff33;
     --secondary-text: #ffffff99;
-    --bg-80: #ffffffcc;
+    --bg-80: #d3d3d3cc;
     color: #ffffff88;
     --deep-brown: #ffeed399;
     --brown: #ffffff;
     --text-color: #ffffff;
+    --menu: #FFFFFFB2;
     --vd-brown: #64554ab4;
     --background: linear-gradient(269.75deg, #0e0e0e -550.59%, var(--blue) 107.92%);
     --card-bg: #1e1e1e;
@@ -75,13 +77,39 @@ body {
 
 }
 
+.f612 {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.4px;
+  color: var(--text-color);
+}
+
+hr {
+  border-width: 2px !important;
+  opacity: 1 !important;
+  border-color: var(--brown) !important;
+}
+
+.mymenu {
+  font-family: Lato;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 14.4px;
+  letter-spacing: 0%;
+  color: var(--menu);
+}
+
+.mymenu.active {
+  color: var(--brown);
+}
+
 .f716 {
   font-family: Lato;
   font-size: 16px;
   font-weight: 700;
   line-height: 19.8px;
   color: var(--text-color);
-
 }
 
 .f616 {
@@ -196,6 +224,15 @@ body {
   display: block;
   width: 100%;
 
+}
+
+.main-text {
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: 0%;
+  color: var(--text-color) !important;
 }
 
 .full-bar {
@@ -351,4 +388,32 @@ body {
 .book-link:hover {
   color: inherit;
   /* Prevent color change on hover */
+}
+
+.episode {
+  font-family: Arial;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 16.1px;
+  letter-spacing: 0%;
+  color: var(--bg-80);
+}
+
+.circular-photo {
+  border-radius: 50%;
+  object-fit: cover;
+  /* Ensures the image fits well */
+}
+
+.custom-offcanvas {
+  background: var(--blue) !important;
+}
+
+@media (max-width: 768px) {
+  .custom-offcanvas {
+    width: 50vw !important;
+    /* 50% of viewport width*/
+    max-width: 50vw !important;
+  }
 }
