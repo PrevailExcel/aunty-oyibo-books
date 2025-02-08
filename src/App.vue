@@ -7,6 +7,23 @@ const theme = ref(localStorage.getItem("theme") || "light-mode");
 onMounted(() => {
     document.body.classList.remove("light-mode", "dark-mode", "paper-mode");
     document.body.classList.add(theme.value);
+
+
+    // Define theme colors (use a color close to the paper background)
+    const themeColors = {
+        "light-mode": "#ffffff",  // White for light mode
+        "dark-mode": "#14120f",   // Black for dark mode
+        "paper-mode": "#cd8638"   // Light brown for paper mode
+    };
+
+    // Update <meta name="theme-color">
+    let metaTag = document.querySelector("meta[name='theme-color']");
+    if (!metaTag) {
+        metaTag = document.createElement("meta");
+        metaTag.setAttribute("name", "theme-color");
+        document.head.appendChild(metaTag);
+    }
+    metaTag.setAttribute("content", themeColors[newTheme]);
 });
 
 function init() {
