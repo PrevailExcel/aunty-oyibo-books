@@ -1,65 +1,52 @@
-<script setup>
-import { ref, onMounted } from 'vue';
-
-let online = ref(true);
-const theme = ref(localStorage.getItem("theme") || "light-mode");
-
-onMounted(() => {
-    document.body.classList.remove("light-mode", "dark-mode", "paper-mode");
-    document.body.classList.add(theme.value);
-
-
-    // Define theme colors (use a color close to the paper background)
-    const themeColors = {
-        "light-mode": "#ffffff",  // White for light mode
-        "dark-mode": "#14120f",   // Black for dark mode
-        "paper-mode": "#deb887"   // Light brown for paper mode
-    };
-
-    // Update <meta name="theme-color">
-    let metaTag = document.querySelector("meta[name='theme-color']");
-    if (!metaTag) {
-        metaTag = document.createElement("meta");
-        metaTag.setAttribute("name", "theme-color");
-        document.head.appendChild(metaTag);
-    }
-    metaTag.setAttribute("content", themeColors[newTheme]);
-});
-
-function init() {
-  handleConnectionChange();
-  window.addEventListener("online", handleConnectionChange);
-  window.addEventListener("offline", handleConnectionChange);
-
-  function handleConnectionChange() {
-    const webPing = setInterval(() => {
-      if (navigator.onLine)
-        online.value = true;
-      else
-        online.value = false;
-      clearInterval(webPing)
-    }, 2000);
-    return;
-  }
-};
-init()
-
-</script>
-
 <template>
-  <div v-show="!online" class="bg-danger p-2 text-center position-fixed top-0 w-100 fw-bold">You Are Offline</div>
-  <div :class="{ 'mt-4': !online }">
-    <router-view />
+  <div class="grain">
+    <!-- Offline banner -->
+    <transition name="fade">
+      <div v-if="!online"
+           class="fixed top-0 left-0 right-0 z-[100] py-2 text-center font-sans text-xs font-semibold text-white"
+           style="background: #c0392b;">
+        You're offline
+      </div>
+    </transition>
+
+    <!-- Main router view -->
+    <div :class="{ 'mt-8': !online }">
+      <router-view v-slot="{ Component, route }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" :key="route.path" />
+        </transition>
+      </router-view>
+    </div>
+
+    <!-- Bottom navigation (only on main pages) -->
+    <transition name="fade">
+      <BottomNav v-if="showNav" />
+    </transition>
   </div>
 </template>
 
-<style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100vh;
-}
-</style>
+<script setup>
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
+import BottomNav from './components/BottomNav.vue';
+import { useTheme } from './composables/useTheme.js';
+
+// Init theme
+useTheme();
+
+const route = useRoute();
+const online = ref(navigator.onLine);
+const showNav = computed(() => route.meta?.showNav !== false);
+
+const handleOnline = () => { online.value = true; };
+const handleOffline = () => { online.value = false; };
+
+onMounted(() => {
+  window.addEventListener('online', handleOnline);
+  window.addEventListener('offline', handleOffline);
+});
+onUnmounted(() => {
+  window.removeEventListener('online', handleOnline);
+  window.removeEventListener('offline', handleOffline);
+});
+</script>

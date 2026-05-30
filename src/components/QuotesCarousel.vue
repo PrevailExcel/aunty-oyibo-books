@@ -1,77 +1,59 @@
 <template>
-    <div class="bg-brown mt-2 text-white p-4 d-flex align-items-center justify-content-between">
-        <div class="pe-5 pt-3 pt-md-0">
-            <transition name="slide" mode="out-in">
-                <blockquote class="quote mb-0" :key="currentIndex">
-                    <p>“{{ quotes[currentIndex].text }}”</p>
-                    <footer class="blockquote-footer text-white mt-3">
-                        {{ quotes[currentIndex].author }}
-                    </footer>
-                </blockquote>
-            </transition>
-        </div>
-        <img src="/images/quote.png" alt="Illustration" class="text-end ms-2 img-fluid" width="100">
+  <div class="relative rounded-2xl overflow-hidden px-5 py-5"
+       style="background: var(--theme-accent);">
+    <!-- Decorative quote mark -->
+    <div class="absolute top-3 right-4 font-display text-6xl leading-none opacity-20 text-white select-none">"</div>
+
+    <div class="flex items-start gap-4">
+      <!-- Text -->
+      <div class="flex-1 min-w-0">
+        <transition name="quote-fade" mode="out-in">
+          <div :key="currentIndex">
+            <p class="font-body text-sm leading-relaxed text-white/95 italic mb-2">
+              "{{ quotes[currentIndex].text }}"
+            </p>
+            <p class="font-sans text-xs font-semibold text-white/70 tracking-wider uppercase">
+              — {{ quotes[currentIndex].author }}
+            </p>
+          </div>
+        </transition>
+      </div>
     </div>
+
+    <!-- Dots -->
+    <div class="flex gap-1.5 mt-4">
+      <button
+        v-for="(_, i) in quotes"
+        :key="i"
+        @click="currentIndex = i"
+        class="h-1 rounded-full transition-all duration-300"
+        :class="i === currentIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/40'"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
+import { MOCK_QUOTES } from '../api/mockData.js';
 
-const quotes = ref([
-    {
-        "text": "Books and Doors are the same thing. You open them, and you go through into another world.",
-        "author": "Jeanette Winterson"
-    },
-    {
-        "text": "A reader lives a thousand lives before he dies. The man who never reads lives only one.",
-        "author": "George R.R. Martin"
-    },
-    {
-        "text": "So many books, so little time. Each one opens a door to a world waiting to be explored.",
-        "author": "Frank Zappa"
-    },
-    {
-        "text": "Once you learn to read, you will be forever free. Books unlock the doors of the mind.",
-        "author": "Frederick Douglass"
-    },
-    {
-        "text": "A great book should leave you with many experiences, and slightly exhausted at the end.",
-        "author": "William Styron"
-    },
-    {
-        "text": "Books have a unique way of stopping time in a particular moment and saying: Let’s not forget this.",
-        "author": "Dave Eggers"
-    }
-]);
-
+const quotes = MOCK_QUOTES;
 const currentIndex = ref(0);
-let interval = null;
+let timer = null;
 
 onMounted(() => {
-    interval = setInterval(() => {
-        currentIndex.value = (currentIndex.value + 1) % quotes.value.length;
-    }, 5000); // Change every 5 seconds
+  timer = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % quotes.length;
+  }, 6000);
 });
-
-onUnmounted(() => {
-    clearInterval(interval);
-});
+onUnmounted(() => clearInterval(timer));
 </script>
 
 <style scoped>
-/* Slide transition */
-.slide-enter-active,
-.slide-leave-active {
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+.quote-fade-enter-active,
+.quote-fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-.slide-enter-from {
-    opacity: 0;
-    transform: translateX(20px);
-}
-
-.slide-leave-to {
-    opacity: 0;
-    transform: translateX(-20px);
-}
+.quote-fade-enter-from { opacity: 0; transform: translateY(8px); }
+.quote-fade-leave-to { opacity: 0; transform: translateY(-8px); }
 </style>
